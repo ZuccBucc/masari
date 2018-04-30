@@ -1,31 +1,31 @@
-name: masari
+name: zuccbucc
 version: 0.1.5.0
-summary: "Masari: the secure, private, untraceable cryptocurrency https://getmasari.org"
+summary: "Zuccbucc: the secure, private, untraceable cryptocurrency https://getzuccbucc.org"
 description: |
-    Masari is a private, secure, untraceable, decentralised digital currency.
+    Zuccbucc is a private, secure, untraceable, decentralised digital currency.
     You are your bank, you control your funds, and nobody can trace your transfers
     unless you allow them to do so.
 grade: devel
 confinement: strict
 
 apps:
-    masarid:
+    zuccbuccd:
         daemon: forking
         command: |
-          masarid-wrapper --detach --data-dir ${SNAP_COMMON} --config-file ${SNAP_USER_DATA}/etc/masarid.conf
+          zuccbuccd-wrapper --detach --data-dir ${SNAP_COMMON} --config-file ${SNAP_USER_DATA}/etc/zuccbuccd.conf
         plugs:
             - network
             - network-bind
-    masari-wallet-rpc:
+    zuccbucc-wallet-rpc:
         command: |
-          masari-wallet-rpc --log-file ${SNAP_USER_DATA}
+          zuccbucc-wallet-rpc --log-file ${SNAP_USER_DATA}
         plugs:
             - home
             - network
             - network-bind
-    masari-wallet-cli:
+    zuccbucc-wallet-cli:
         command: |
-          masari-wallet-cli --log-file ${SNAP_USER_DATA}
+          zuccbucc-wallet-cli --log-file ${SNAP_USER_DATA}
         plugs:
             - home
             - network
@@ -72,8 +72,8 @@ parts:
         plugin: dump
         source: .
         organize:
-            contrib/snap/masarid.conf: etc/masarid.conf
-            contrib/snap/masarid-wrapper: bin/masarid-wrapper
+            contrib/snap/zuccbuccd.conf: etc/zuccbuccd.conf
+            contrib/snap/zuccbuccd-wrapper: bin/zuccbuccd-wrapper
         prime:
             - etc
             - bin

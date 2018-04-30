@@ -1,4 +1,4 @@
-// Copyright (c) 2017-2018, The Masari Project
+// Copyright (c) 2017-2018, The Zuccbucc Project
 // Copyright (c) 2014-2018, The Monero Project
 // 
 // All rights reserved.
@@ -91,9 +91,9 @@ using namespace cryptonote;
 // arbitrary, used to generate different hashes from the same input
 #define CHACHA8_KEY_TAIL 0x8c
 
-#define UNSIGNED_TX_PREFIX "Masari unsigned tx set\004"
-#define SIGNED_TX_PREFIX "Masari signed tx set\004"
-#define MULTISIG_UNSIGNED_TX_PREFIX "Masari multisig unsigned tx set\001"
+#define UNSIGNED_TX_PREFIX "Zuccbucc unsigned tx set\004"
+#define SIGNED_TX_PREFIX "Zuccbucc signed tx set\004"
+#define MULTISIG_UNSIGNED_TX_PREFIX "Zuccbucc multisig unsigned tx set\001"
 
 #define RECENT_OUTPUT_RATIO (0.5) // 50% of outputs are from the recent zone
 #define RECENT_OUTPUT_DAYS (1.8) // last 1.8 day makes up the recent zone (taken from monerolink.pdf, Miller et al)
@@ -107,9 +107,9 @@ using namespace cryptonote;
 #define SUBADDRESS_LOOKAHEAD_MAJOR 50
 #define SUBADDRESS_LOOKAHEAD_MINOR 200
 
-#define KEY_IMAGE_EXPORT_FILE_MAGIC "Masari key image export\002"
+#define KEY_IMAGE_EXPORT_FILE_MAGIC "Zuccbucc key image export\002"
 
-#define MULTISIG_EXPORT_FILE_MAGIC "Masari multisig export\001"
+#define MULTISIG_EXPORT_FILE_MAGIC "Zuccbucc multisig export\001"
 
 #define SEGREGATION_FORK_HEIGHT 1564965
 #define TESTNET_SEGREGATION_FORK_HEIGHT 1000000
@@ -122,7 +122,7 @@ namespace
   std::string get_default_ringdb_path()
   {
     boost::filesystem::path dir = tools::get_default_data_dir();
-    // .masari/shared-ringdb is the default path
+    // .zuccbucc/shared-ringdb is the default path
     dir /= "shared-ringdb";
     return dir.string();
   }
@@ -10049,7 +10049,7 @@ std::string wallet2::make_uri(const std::string &address, const std::string &pay
     }
   }
 
-  std::string uri = "masari:" + address;
+  std::string uri = "zuccbucc:" + address;
   unsigned int n_fields = 0;
 
   if (!payment_id.empty())
@@ -10078,9 +10078,9 @@ std::string wallet2::make_uri(const std::string &address, const std::string &pay
 //----------------------------------------------------------------------------------------------------
 bool wallet2::parse_uri(const std::string &uri, std::string &address, std::string &payment_id, uint64_t &amount, std::string &tx_description, std::string &recipient_name, std::vector<std::string> &unknown_parameters, std::string &error)
 {
-  if (uri.substr(0, 7) != "masari:")
+  if (uri.substr(0, 7) != "zuccbucc:")
   {
-    error = std::string("URI has wrong scheme (expected \"masari:\"): ") + uri;
+    error = std::string("URI has wrong scheme (expected \"zuccbucc:\"): ") + uri;
     return false;
   }
 

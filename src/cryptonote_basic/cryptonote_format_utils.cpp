@@ -1,4 +1,4 @@
-// Copyright (c) 2017-2018, The Masari Project
+// Copyright (c) 2017-2018, The Zuccbucc Project
 // Copyright (c) 2014-2018, The Monero Project
 // 
 // All rights reserved.
@@ -675,15 +675,15 @@ namespace cryptonote
     switch (std::atomic_load(&default_decimal_point))
     {
       case 12:
-        return "masari";
+        return "zuccbucc";
       case 9:
-        return "millisari";
+        return "millizucc";
       case 6:
-        return "microsari";
+        return "microzucc";
       case 3:
-        return "nanosari";
+        return "nanozucc";
       case 0:
-        return "picosari";
+        return "picozucc";
       default:
         ASSERT_MES_AND_THROW("Invalid decimal point specification: " << default_decimal_point);
     }

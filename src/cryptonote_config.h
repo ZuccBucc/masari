@@ -1,4 +1,4 @@
-// Copyright (c) 2017-2018, The Masari Project
+// Copyright (c) 2017-2018, The Zuccbucc Project
 // Copyright (c) 2014-2018, The Monero Project
 // 
 // All rights reserved.
@@ -120,7 +120,7 @@
 
 #define ALLOW_DEBUG_COMMANDS
 
-#define CRYPTONOTE_NAME                         "masari"
+#define CRYPTONOTE_NAME                         "zuccbucc"
 #define CRYPTONOTE_POOLDATA_FILENAME            "poolstate.bin"
 #define CRYPTONOTE_BLOCKCHAINDATA_FILENAME      "data.mdb"
 #define CRYPTONOTE_BLOCKCHAINDATA_LOCK_FILENAME "lock.mdb"
