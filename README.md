@@ -1,6 +1,6 @@
 # Zuccbucc
 
-Copyright (c) 2018 The Zuccbucc Project.
+Copyright (c) 2018 Zuccbucc
 
 Copyright (c) 2017-2018 The Masari Project.
 
