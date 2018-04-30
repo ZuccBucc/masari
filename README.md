@@ -49,7 +49,7 @@ As with many development projects, the repository on Github is considered to be 
 
 Zuccbucc is a 100% community-sponsored endeavor. If you want to join our efforts, the easiest thing you can do is support the project financially.
 
-The Zuccbucc donation address is: `5nYWvcvNThsLaMmrsfpRLBRou1RuGtLabUwYH7v6b88bem2J4aUwsoF33FbJuqMDgQjpDRTSpLCZu3dXpqXicE2uSWS4LUP` (viewkey: `99e21e00cce073c126e9aed800c9e2e82518534b3924b035a29436ff4f75bc0c`)
+The Zuccbucc donation address is: `ZuCCb3gKt2mVbXh1KR7opr8ryny7U5BcEdfQk8CUDku76k3EZdYPJHbgdcZPa6Dk3xN3nyMkXye7h4qsMw4fYdoD9Gmbc1bZCh` (viewkey: `6a9ec78e424220a191b807a4d71e669ef83ddbe68ce5e585ae88736b5a31400d`)
 
 The Monero donation address is: `858qnzkrMb8aVTJ528Yovm5KVN25aLuWKQAvjZq8HtR1UU6f3VoiJsPcnZm8o1eaRpAG7dExGf7SsZ3CQRkAYs8k6ztUDqn`
 
