@@ -141,14 +141,14 @@ namespace config
   uint64_t const DEFAULT_DUST_THRESHOLD = 0; // deprecated
   std::string const P2P_REMOTE_DEBUG_TRUSTED_PUB_KEY = "0000000000000000000000000000000000000000000000000000000000000000";
 
-  uint64_t const CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX = 28;
-  uint64_t const CRYPTONOTE_PUBLIC_INTEGRATED_ADDRESS_BASE58_PREFIX = 29;
-  uint64_t const CRYPTONOTE_PUBLIC_SUBADDRESS_BASE58_PREFIX = 52;
-  uint16_t const P2P_DEFAULT_PORT = 38080;
-  uint16_t const RPC_DEFAULT_PORT = 38081;
-  uint16_t const ZMQ_RPC_DEFAULT_PORT = 38082;
+  uint64_t const CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX = 69;
+  uint64_t const CRYPTONOTE_PUBLIC_INTEGRATED_ADDRESS_BASE58_PREFIX = 70;
+  uint64_t const CRYPTONOTE_PUBLIC_SUBADDRESS_BASE58_PREFIX = 93;
+  uint16_t const P2P_DEFAULT_PORT = 38580;
+  uint16_t const RPC_DEFAULT_PORT = 38581;
+  uint16_t const ZMQ_RPC_DEFAULT_PORT = 38582;
   boost::uuids::uuid const NETWORK_ID = { {
-      0x12 ,0x30, 0xF1, 0x71 , 0x61, 0x04 , 0x41, 0x61, 0x17, 0x31, 0x00, 0x82, 0x16, 0xA1, 0xA1, 0x12
+      0x12 ,0x30, 0xF1, 0x71 , 0x61, 0x04 , 0x41, 0x61, 0x17, 0x31, 0x00, 0x82, 0x16, 0xA1, 0xA1, 0x22
     } }; // Bender's nightmare
   std::string const GENESIS_TX =
     "01"                                                                  // version
@@ -171,11 +171,11 @@ namespace config
     uint64_t const CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX = 33;
     uint64_t const CRYPTONOTE_PUBLIC_INTEGRATED_ADDRESS_BASE58_PREFIX = 34;
     uint64_t const CRYPTONOTE_PUBLIC_SUBADDRESS_BASE58_PREFIX = 73;
-    uint16_t const P2P_DEFAULT_PORT = 48080;
-    uint16_t const RPC_DEFAULT_PORT = 48081;
+    uint16_t const P2P_DEFAULT_PORT = 48580;
+    uint16_t const RPC_DEFAULT_PORT = 48581;
     uint16_t const ZMQ_RPC_DEFAULT_PORT = 48082;
     boost::uuids::uuid const NETWORK_ID = { {
-        0x12 ,0x30, 0xF1, 0x71 , 0x61, 0x04 , 0x41, 0x61, 0x17, 0x31, 0x00, 0x82, 0x16, 0xA1, 0xA1, 0x13
+        0x12 ,0x30, 0xF1, 0x71 , 0x61, 0x04 , 0x41, 0x61, 0x17, 0x31, 0x00, 0x82, 0x16, 0xA1, 0xA1, 0x23
       } }; // Bender's daydream
   }
 
@@ -184,11 +184,11 @@ namespace config
     uint64_t const CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX = 34;
     uint64_t const CRYPTONOTE_PUBLIC_INTEGRATED_ADDRESS_BASE58_PREFIX = 35;
     uint64_t const CRYPTONOTE_PUBLIC_SUBADDRESS_BASE58_PREFIX = 46;
-    uint16_t const P2P_DEFAULT_PORT = 58080;
-    uint16_t const RPC_DEFAULT_PORT = 58081;
-    uint16_t const ZMQ_RPC_DEFAULT_PORT = 58082;
+    uint16_t const P2P_DEFAULT_PORT = 58580;
+    uint16_t const RPC_DEFAULT_PORT = 58581;
+    uint16_t const ZMQ_RPC_DEFAULT_PORT = 58582;
     boost::uuids::uuid const NETWORK_ID = { {
-        0x12 ,0x30, 0xF1, 0x71 , 0x61, 0x04 , 0x41, 0x61, 0x17, 0x31, 0x00, 0x82, 0x16, 0xA1, 0xA1, 0x14
+        0x12 ,0x30, 0xF1, 0x71 , 0x61, 0x04 , 0x41, 0x61, 0x17, 0x31, 0x00, 0x82, 0x16, 0xA1, 0xA1, 0x24
       } }; // Bender's daydream
   }
 }

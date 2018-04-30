@@ -111,7 +111,7 @@ VOLUME /root/.zuccbucc
 # monero-wallet-cli
 VOLUME /wallet
 
-EXPOSE 38080
-EXPOSE 38081
+EXPOSE 38580
+EXPOSE 38581
 
 ENTRYPOINT ["monerod", "--p2p-bind-ip=0.0.0.0", "--p2p-bind-port=18080", "--rpc-bind-ip=0.0.0.0", "--rpc-bind-port=18081", "--non-interactive", "--confirm-external-bind"] 
