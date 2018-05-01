@@ -391,7 +391,8 @@ namespace nodetool
     }
     else
     {
-      full_addrs.insert("5.135.157.4:38580");
+      full_addrs.insert("5.135.157.4:38581");
+      full_addrs.insert("94.23.49.75:38581");
     }
     return full_addrs;
   }
