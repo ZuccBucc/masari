@@ -711,8 +711,10 @@ difficulty_type Blockchain::get_difficulty_for_next_block()
     difficulty_blocks_count = DIFFICULTY_BLOCKS_COUNT;
   } else if (version == 2) {
     difficulty_blocks_count = DIFFICULTY_BLOCKS_COUNT_V2;
-  } else {
+  } else if (version < 6) {
     difficulty_blocks_count = DIFFICULTY_BLOCKS_COUNT_V3;
+  } else {
+    difficulty_blocks_count = DIFFICULTY_BLOCKS_COUNT_V6;
   }
 
   // ND: Speedup
@@ -760,8 +762,10 @@ difficulty_type Blockchain::get_difficulty_for_next_block()
     return next_difficulty_v2(timestamps, difficulties, target);
   } else if (version == 3) {
     return next_difficulty_v3(timestamps, difficulties, target, false);
-  } else {
+  } else if (version < 6) {
     return next_difficulty_v3(timestamps, difficulties, target, true);
+  } else {
+    return next_difficulty_v6(timestamps, difficulties, target);
   }
 }
 //------------------------------------------------------------------
@@ -916,8 +920,10 @@ difficulty_type Blockchain::get_next_difficulty_for_alternative_chain(const std:
     difficulty_blocks_count = DIFFICULTY_BLOCKS_COUNT;
   } else if (version == 2) {
     difficulty_blocks_count = DIFFICULTY_BLOCKS_COUNT_V2;
-  } else {
+  } else if (version < 6) {
     difficulty_blocks_count = DIFFICULTY_BLOCKS_COUNT_V3;
+  } else {
+    difficulty_blocks_count = DIFFICULTY_BLOCKS_COUNT_V6;
   }
 
   // if the alt chain isn't long enough to calculate the difficulty target
@@ -980,8 +986,10 @@ difficulty_type Blockchain::get_next_difficulty_for_alternative_chain(const std:
     return next_difficulty_v2(timestamps, cumulative_difficulties, target);
   } else if (version == 3) {
     return next_difficulty_v3(timestamps, cumulative_difficulties, target, false);
-  } else {
+  } else if (version < 6) {
     return next_difficulty_v3(timestamps, cumulative_difficulties, target, true);
+  } else {
+    return next_difficulty_v6(timestamps, cumulative_difficulties, target);
   }
 }
 //------------------------------------------------------------------
@@ -2347,12 +2355,12 @@ bool Blockchain::check_tx_outputs(const transaction& tx, tx_verification_context
     }
   }
 
-  // from v6, allow bulletproofs
-  if (hf_version < 6) {
+  // from v7, allow bulletproofs
+  if (hf_version < 7) {
     const bool bulletproof = tx.rct_signatures.type == rct::RCTTypeFullBulletproof || tx.rct_signatures.type == rct::RCTTypeSimpleBulletproof;
     if (bulletproof || !tx.rct_signatures.p.bulletproofs.empty())
     {
-      MERROR("Bulletproofs are not allowed before v6");
+      MERROR("Bulletproofs are not allowed before v7");
       tvc.m_invalid_output = true;
       return false;
     }
@@ -2943,7 +2951,16 @@ bool Blockchain::check_block_timestamp(std::vector<uint64_t>& timestamps, const 
 bool Blockchain::check_block_timestamp(const block& b) const
 {
   LOG_PRINT_L3("Blockchain::" << __func__);
-  uint64_t cryptonote_block_future_time_limit = get_current_hard_fork_version() < 2 ? CRYPTONOTE_BLOCK_FUTURE_TIME_LIMIT : CRYPTONOTE_BLOCK_FUTURE_TIME_LIMIT_V2;
+  uint64_t cryptonote_block_future_time_limit;
+  uint8_t hf_version = get_current_hard_fork_version();
+  if (hf_version < 2) {
+    cryptonote_block_future_time_limit = CRYPTONOTE_BLOCK_FUTURE_TIME_LIMIT;
+  } else if (hf_version < 6) {
+    cryptonote_block_future_time_limit = CRYPTONOTE_BLOCK_FUTURE_TIME_LIMIT_V2;
+  } else {
+    cryptonote_block_future_time_limit = CRYPTONOTE_BLOCK_FUTURE_TIME_LIMIT_V6;
+  }
+
   if(b.timestamp > get_adjusted_time() + cryptonote_block_future_time_limit)
   {
     MERROR_VER("Timestamp of block with id: " << get_block_hash(b) << ", " << b.timestamp << ", bigger than adjusted time + " << (get_current_hard_fork_version() < 2 ? "2 hours" : "30 minutes"));
