@@ -159,10 +159,10 @@ namespace config
     "01"                                                                  // vout length
     "ffffffffffff07"                                                      // output #1 amount
     "02"                                                                  // output 1 type
-    "0bf6522f9152fa26cd1fc5c022b1a9e13dab697f3acf4b4d0ca6950a867a1943"    // output #1 key
+    "3338e0308471084cfab5a7ed5ffc019a655f878126cb03b046c7c91277167692"    // output #1 key
     "21"                                                                  // extra length in bytes
     "01"                                                                  // extra pubkey tag
-    "1d92826d0656958865a035264725799f39f6988faa97d532f972895de849496d00"; // tx pubkey
+    "a7adbf59dd81ab9f6b3417c4f9962cdbfd1e9d21d029e95b3f494410c4252b8e00"; // tx pubkey
 
   uint32_t const GENESIS_NONCE = 10000;
 
