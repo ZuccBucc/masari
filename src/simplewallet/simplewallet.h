@@ -52,7 +52,7 @@
 #undef MONERO_DEFAULT_LOG_CATEGORY
 #define MONERO_DEFAULT_LOG_CATEGORY "wallet.simplewallet"
 
-constexpr const char ZUCCBUCC_DONATION_ADDR[] = "5nYWvcvNThsLaMmrsfpRLBRou1RuGtLabUwYH7v6b88bem2J4aUwsoF33FbJuqMDgQjpDRTSpLCZu3dXpqXicE2uSWS4LUP";
+constexpr const char ZUCCBUCC_DONATION_ADDR[] = "ZuCCHVeMSiuR4dFvUUJr1Hj7zuiZLiXk3YAj1p41CuRC4LQieVamm2M4n6AFfSVYSfb52nqEe5rCxCTG7GgVHM646D92kksG2y";
 
 /*!
  * \namespace cryptonote

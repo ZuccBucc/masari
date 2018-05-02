@@ -1559,8 +1559,8 @@ Denna transaktion låses upp vid block %llu, om ungefär %s dagar (förutsatt en
     </message>
     <message>
         <location filename="../src/simplewallet/simplewallet.cpp" line="1622"/>
-        <source>Donate &lt;amount&gt; to the development team (donate.getzuccbucc.org).</source>
-        <translation>Donera &lt;belopp&gt; till utvecklingsteamet (donate.getzuccbucc.org).</translation>
+        <source>Donate &lt;amount&gt; to the development team (donate.zuccbu.cc).</source>
+        <translation>Donera &lt;belopp&gt; till utvecklingsteamet (donate.zuccbu.cc).</translation>
     </message>
     <message>
         <location filename="../src/simplewallet/simplewallet.cpp" line="1625"/>
