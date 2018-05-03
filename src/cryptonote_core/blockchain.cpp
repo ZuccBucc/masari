@@ -92,6 +92,7 @@ static const struct {
 } mainnet_hard_forks[] = {
   { 1, 1, 0, 1504387246 },
   { 5, 60, 0, 1505387246 },
+  { 5, 100, 0, 1525277953 },
 };
 
 static const struct {
